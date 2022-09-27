@@ -1399,6 +1399,14 @@
   resolved "https://registry.yarnpkg.com/@discoveryjs/json-ext/-/json-ext-0.5.7.tgz#1d572bfbbe14b7704e0ba0f39b74815b84870d70"
   integrity sha512-dBVuXR082gk3jsFp7Rd/JI4kytwGHecnCoTtXFb7DB6CNHp4rg5k1bhg0nWdLGLnOV71lmDzGQaLMy8iPLY0pw==
 
+"@elogic/banktransfer@link:src/extentions/@elogic/banktransfer":
+  version "0.0.0"
+  uid ""
+
+"@elogic/cashondelivery@link:src/extentions/@elogic/cashondelivery":
+  version "0.0.0"
+  uid ""
+
 "@emotion/cache@^10.0.27":
   version "10.0.29"
   resolved "https://registry.yarnpkg.com/@emotion/cache/-/cache-10.0.29.tgz#87e7e64f412c060102d589fe7c6dc042e6f9d1e0"
@@ -2035,6 +2043,11 @@
   version "1.0.10"
   resolved "https://registry.yarnpkg.com/@magento/upward-security-headers/-/upward-security-headers-1.0.10.tgz#d1cd4ad26d5092ae9fac28f9c41786204f0a9578"
   integrity sha512-dhKTl+Gu3oPQD/ffXyHtDduMCo2s+t20pEzRdzWdqvoAybXKaXiJtnha7t/3sdmcQAwlfCSTk1RN+s1PqEmL5Q==
+
+"@magento/venia-sample-payments-checkmo@^0.0.8":
+  version "0.0.8"
+  resolved "https://registry.yarnpkg.com/@magento/venia-sample-payments-checkmo/-/venia-sample-payments-checkmo-0.0.8.tgz#d05ebf40c886e69d2967d4ea4f209c315e0ff976"
+  integrity sha512-9NpYFu4fzJiBEvFN2mA4J38L67aPyA0w+ZZNtWFaCjK452JuCiK43axVUKrJGQC3GkkArxmGi0ePbnc+0f6TRg==
 
 "@magento/venia-ui@~9.6.0":
   version "9.6.0"
@@ -8851,7 +8864,7 @@ human-signals@^3.0.1:
   resolved "https://registry.yarnpkg.com/human-signals/-/human-signals-3.0.1.tgz#c740920859dafa50e5a3222da9d3bf4bb0e5eef5"
   integrity sha512-rQLskxnM/5OCldHo+wNXbpVgDn5A17CUoKX+7Sokwaknlq7CdSnphy0W39GU8dw59XiCXmFXDg4fRuckQRKewQ==
 
-husky@^8.0.1:
+husky@^8.0.0:
   version "8.0.1"
   resolved "https://registry.yarnpkg.com/husky/-/husky-8.0.1.tgz#511cb3e57de3e3190514ae49ed50f6bc3f50b3e9"
   integrity sha512-xs7/chUH/CKdOCs7Zy0Aev9e/dKOMZf3K1Az1nar3tzlv0jfqnYtu235bstsWTmXOR0EfINrPa97yy4Lz6RiKw==
