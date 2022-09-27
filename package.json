@@ -34,6 +34,8 @@
     "@magento/venia-drivers": "src/drivers"
   },
   "dependencies": {
+    "@elogic/banktransfer": "link:src/extentions/@elogic/banktransfer",
+    "@elogic/cashondelivery": "link:src/extentions/@elogic/cashondelivery",
     "@magento/pwa-buildpack": "~11.4.0"
   },
   "devDependencies": {
@@ -55,6 +57,7 @@
     "@magento/peregrine": "~12.5.1",
     "@magento/pwa-theme-venia": "~1.3.0",
     "@magento/upward-security-headers": "~1.0.10",
+    "@magento/venia-sample-payments-checkmo": "^0.0.8",
     "@magento/venia-ui": "~9.6.0",
     "@pmmmwh/react-refresh-webpack-plugin": "0.4.1",
     "@storybook/react": "~6.3.7",
