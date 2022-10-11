@@ -36,7 +36,8 @@
   "dependencies": {
     "@elogic/banktransfer": "link:src/extentions/@elogic/banktransfer",
     "@elogic/cashondelivery": "link:src/extentions/@elogic/cashondelivery",
-    "@magento/pwa-buildpack": "~11.4.0"
+    "@magento/pwa-buildpack": "~11.4.0",
+    "react-icons": "^4.4.0"
   },
   "devDependencies": {
     "@adobe/apollo-link-mutation-queue": "~1.0.2",
