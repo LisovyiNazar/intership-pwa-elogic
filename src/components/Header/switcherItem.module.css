@@ -1,0 +1,5 @@
+.text {
+    composes: text from '@magento/venia-ui/lib/components/Header/switcherItem.module.css';
+    display: flex;
+    font-display: unset;
+}
