@@ -17,6 +17,9 @@
  * or modify functionality from its dependencies.
  */
 
-function localIntercept() {}
+function localIntercept(targets) {
+    const componentsIntercept = require('./core-overrides/components/components.targetables');
+    componentsIntercept(targets);
+}
 
 module.exports = localIntercept;
