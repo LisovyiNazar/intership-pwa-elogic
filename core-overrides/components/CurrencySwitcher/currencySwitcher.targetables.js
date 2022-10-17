@@ -23,4 +23,15 @@ module.exports = targets => {
         '</SwitcherItem>',
         '\n{fullCurrency.map(element => {if(code == element.code){return <div>{element.name}</div>}})}\n'
     );
+
+    CurrencySwitcher.insertBeforeJSX(
+        'CurrencySymbol',
+        'span'
+    )
+
+    CurrencySwitcher.setJSXProps(
+        'SwitcherItem', {
+            code: `{ fullCurrency }`
+        }
+    )
 }
