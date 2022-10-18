@@ -1,0 +1,5 @@
+.label {
+    composes: label from '@magento/venia-ui/lib/components/Header/searchTrigger.module.css';
+    margin-right: 5px;
+    margin-left: 0px;
+}

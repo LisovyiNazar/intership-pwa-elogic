@@ -1,0 +1,4 @@
+.menu_open {
+    composes: menu_open from '@magento/venia-ui/lib/components/Header/currencySwitcher.module.css';
+    width: 230px;
+}
