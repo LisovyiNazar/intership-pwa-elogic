@@ -7,8 +7,8 @@ module.exports = targets => {
         '@magento/venia-ui/lib/components/AccountChip/accountChip.js'
     );
 
-    AccountChip.insertAfterJSX(
-        'span data-cy="AccountChip-text"',
+    AccountChip.appendJSX(
+        'span className={classes.root}',
         'Icon src={AccountIcon}'
     );
 

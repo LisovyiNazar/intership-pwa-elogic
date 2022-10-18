@@ -9,10 +9,8 @@ module.exports = targets => {
 
     CartTrigger.addImport("{ FiShoppingCart } from 'react-icons/fi'");
 
-    CartTrigger.insertAfterJSX(
+    CartTrigger.replaceJSX(
         '<Icon src={ShoppingCartIcon} />',
         'FiShoppingCart size={25}'
     );
-
-    CartTrigger.removeJSX('Icon src={ShoppingCartIcon}');
 }
