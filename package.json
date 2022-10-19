@@ -38,6 +38,7 @@
     "@elogic/cashondelivery": "link:src/extentions/@elogic/cashondelivery",
     "@larsroettig/component-targetables": "^3.0.0",
     "@magento/pwa-buildpack": "~11.4.0",
+    "react-hot-toast": "^2.4.0",
     "react-icons": "^4.4.0"
   },
   "devDependencies": {
