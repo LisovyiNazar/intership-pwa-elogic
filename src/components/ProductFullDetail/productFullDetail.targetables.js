@@ -1,28 +1,19 @@
 const interceptComponent = ProductFullDetail => {
-    ProductFullDetail.addImport('toast from "react-hot-toast"');
-    ProductFullDetail.addImport('{ Toaster } from "react-hot-toast"');
+    ProductFullDetail.addImport('Notifications from "src/components/Notifications"');
+    ProductFullDetail.addImport('NotificationButton from "src/components/NotificationButton"');
+
     
     ProductFullDetail.insertAfterSource(
         '<Fragment>',
-        '<a href="/checkout"><Toaster toastOptions={{ duration: 5000, position: "top-center" }} /></a>'
+        '<Notifications isAddToCartDisabled={isAddToCartDisabled}/>'
     );
 
     ProductFullDetail.replaceJSX(
-        `Button data-cy="ProductFullDetail-addToCartButton"`,
-        `Button
-            data-cy="ProductFullDetail-addToCartButton"
-            disabled={isAddToCartDisabled}
-            priority="high"
-            type="submit"
-            onClick={() => toast.success(formatMessage(
-                {
-                    id: "productFullDetail.addedToCart"
-                },
-                {
-                    name: product.name
-                }
-            ))}
+        'Button data-cy="ProductFullDetail-addToCartButton"',
+        `NotificationButton
+            productName={product.name}
             children={cartCallToActionText}
+            isAddToCartDisabled={isAddToCartDisabled}
         `
     );
 };
