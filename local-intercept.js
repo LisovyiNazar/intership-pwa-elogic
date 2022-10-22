@@ -19,9 +19,11 @@
 
 function localIntercept(targets) {
     // This is first variant for overrides components by intercept method
-    // const componentsIntercept = require('./core-overrides/components/components.targetables');
-    // componentsIntercept(targets);
-    
+    const componentsIntercept = require('./core-overrides/components/components.targetables');
+    componentsIntercept(targets);
+
+    const talonsIntercept = require('./core-overrides/talons/talons.targetables');
+    talonsIntercept(targets);
 
     // This is second variant for overrides components by intercept method
     const { ExtendLocalIntercept } = require('@larsroettig/component-targetables');
