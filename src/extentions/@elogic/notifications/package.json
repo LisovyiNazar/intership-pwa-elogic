@@ -1,0 +1,19 @@
+{
+    "name": "@elogic/notifications",
+    "version": "0.0.1",
+    "description": "Module for notifications",
+    "main": "index.js",
+    "scripts": {
+        "check": "yarn check:eslint && yarn check:prettier",
+        "check:eslint": "eslint",
+        "check:prettier": "prettier --check '*.{js,jsx,css}'"
+    },
+    "author": "Lev Ladyka <l.ladyka@elogic.com.ua>",
+    "license": "UNLICENSED",
+    "sideEffects": false,
+    "pwa-studio": {
+        "targets": {
+            "intercept": "src/targets/intercept.js"
+        }
+    }
+}

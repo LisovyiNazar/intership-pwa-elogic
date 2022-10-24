@@ -34,8 +34,9 @@
     "@magento/venia-drivers": "src/drivers"
   },
   "dependencies": {
-    "@elogic/banktransfer": "link:src/extentions/@elogic/banktransfer",
+    "@elogic/banktransfer":   "link:src/extentions/@elogic/banktransfer",
     "@elogic/cashondelivery": "link:src/extentions/@elogic/cashondelivery",
+    "@elogic/notifications":  "link:src/extentions/@elogic/notifications",
     "@larsroettig/component-targetables": "^3.0.0",
     "@magento/pwa-buildpack": "~11.4.0",
     "react-hot-toast": "^2.4.0",
@@ -152,6 +153,12 @@
   "pwa-studio": {
     "targets": {
       "intercept": "./local-intercept.js"
-    }
-  }
+    },
+    "trusted-vendors": [
+      "@elogic"
+    ]
+  },
+  "workspaces": [
+    "src/extentions/@elogic/*"
+  ]
 }
