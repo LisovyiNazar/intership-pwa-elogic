@@ -4,9 +4,9 @@ module.exports = targets => {
     const targetables = Targetables.using(targets);
 
     const Main = targetables.reactComponent(
-        '@magento/venia-ui/lib/components/Main'
+        '@magento/venia-ui/lib/components/Main/main.js'
     );
 
-    Main.addImport('ToastContainer from "src/components/ToastContainer"');
+    Main.addImport('ToastContainer from "@elogic/notifications/src/components/ToastContainer/toastContainer.js"');
     Main.insertAfterJSX('Header', 'ToastContainer');
 }

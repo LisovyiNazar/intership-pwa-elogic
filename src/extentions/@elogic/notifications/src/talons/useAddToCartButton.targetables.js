@@ -7,7 +7,7 @@ module.exports = targets => {
         '@magento/peregrine/lib/talons/Gallery/useAddToCartButton.js'
     );
 
-    useAddToCartButton.addImport('{ useToastResultIndicator } from "src/talons/ToastResultIndicator/useToastResultIndicator.js";');
+    useAddToCartButton.addImport('{ useToastResultIndicator } from "@elogic/notifications/src/talons/useToastResultIndicator.js";');
 
     useAddToCartButton.insertAfterSource(
         'const [addToCart] = useMutation(operations.ADD_ITEM);',

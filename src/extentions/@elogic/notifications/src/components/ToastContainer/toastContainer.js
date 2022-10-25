@@ -4,7 +4,7 @@ import defaultClasses from './toastContainer.module.css';
 import { useStyle } from '@magento/venia-ui/lib/classify';
 import { shape, string } from 'prop-types';
 import Toast from '@magento/venia-ui/lib/components/ToastContainer/toast';
-import Icons from '../Icons';
+import Icons from 'src/components/Icons/index.js';
 
 const ToastContainer = (props) => {
     const { toasts } = useToaster();

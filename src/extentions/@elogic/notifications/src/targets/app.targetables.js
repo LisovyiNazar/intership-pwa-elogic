@@ -4,8 +4,8 @@ module.exports = targets => {
     const targetables = Targetables.using(targets);
 
     const App = targetables.reactComponent(
-        '@magento/venia-ui/lib/components/App'
+        '@magento/venia-ui/lib/components/App/app.js'
     );
 
-    App.removeJSX('div className={classes.controls}');
+    App.removeJSX('ToastContainer');
 }
