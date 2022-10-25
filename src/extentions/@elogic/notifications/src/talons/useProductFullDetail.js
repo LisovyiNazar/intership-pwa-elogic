@@ -10,7 +10,7 @@ import { isProductConfigurable } from '@magento/peregrine/lib/util/isProductConf
 import { isSupportedProductType as isSupported } from '@magento/peregrine/lib/util/isSupportedProductType';
 import { deriveErrorMessage } from '@magento/peregrine/lib/util/deriveErrorMessage';
 import { useEventingContext } from '@magento/peregrine/lib/context/eventing';
-import { useToastResultIndicator } from '../ToastResultIndicator/useToastResultIndicator';
+import { useToastResultIndicator } from './useToastResultIndicator';
 import mergeOperations from '@magento/peregrine/lib/util/shallowMerge';
 import defaultOperations from '@magento/peregrine/lib/talons/ProductFullDetail/productFullDetail.gql.ce.js';
 

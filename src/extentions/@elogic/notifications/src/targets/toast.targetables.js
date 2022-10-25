@@ -7,5 +7,5 @@ module.exports = targets => {
         '@magento/venia-ui/lib/components/ToastContainer/toast.js'
     );
 
-    Toast.removeJSX('div className={classes.controls}')
+    Toast.removeJSX('div className={classes.controls}');
 }

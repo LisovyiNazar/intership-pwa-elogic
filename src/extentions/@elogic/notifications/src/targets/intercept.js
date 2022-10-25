@@ -1,3 +1,4 @@
+/* eslint-disable */
 module.exports = (targets) => {
     targets.of('@magento/pwa-buildpack').specialFeatures.tap((flags) => {
         flags[targets.name] = {
@@ -9,18 +10,18 @@ module.exports = (targets) => {
     });
 
     // Targetables
-    // const App = require('./app.targetables');
-    // App(targets);
+    const App = require('./app.targetables');
+    App(targets);
 
-    // const Main = require('./main.targetables');
-    // Main(targets);
+    const Main = require('./main.tagetagles');
+    Main(targets);
 
     const Toast = require('./toast.targetables');
     Toast(targets);
 
-    // const useAddToCartButton = require('./useAddToCartButton.targetables');
-    // useAddToCartButton(targets);
+    const ProductFullDetail = require('./productFullDetail.targetables');
+    ProductFullDetail(targets);
 
-    // const useProductFullDetail = require('./useProductFullDetail.targetables');
-    // useProductFullDetail(targets);
+    const useAddToCartButton = require('../talons/useAddToCartButton.targetables');
+    useAddToCartButton(targets);
 };

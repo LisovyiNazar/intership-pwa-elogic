@@ -23,5 +23,4 @@ module.exports = targets => {
         'console.error(error);',
         'onError();\n'
     );
-
-};
+}
