@@ -3,6 +3,7 @@ import { useStyle } from '@magento/venia-ui/lib/classify.js';
 import defaultClasses from './accountMenu.module.css';
 import { useAccountMenuItems } from '@magento/peregrine/lib/talons/AccountMenu/useAccountMenuItems.js';
 import { Link } from 'react-router-dom';
+import { FormattedMessage } from 'react-intl';
 
 const AccountMenu = () => {
     const talonsProps = useAccountMenuItems(() => {});
@@ -23,9 +24,7 @@ const AccountMenu = () => {
                                             : null
                                     }
                                     <Link to={item.url} className={classes.link} id={i}>
-                                        {
-                                            item.name
-                                        } 
+                                        <FormattedMessage id={item.id} defaultMessage={item.name} />
                                     </Link>
                                 </div>
                                 {

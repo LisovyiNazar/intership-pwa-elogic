@@ -5,8 +5,7 @@ module.exports = (targets) => {
         flags[targets.name] = {
             esModules: true,
             cssModules: true,
-            graphqlQueries: true,
-            i18n: true
+            graphqlQueries: true
         };
     });
 
@@ -14,4 +13,7 @@ module.exports = (targets) => {
 
     const targetsIntercept = require('./targets.targetables');
     targetsIntercept(targetables);
+
+    const talonsIntercept = require('../talons/talons.targetables');
+    talonsIntercept(targetables);
 };
