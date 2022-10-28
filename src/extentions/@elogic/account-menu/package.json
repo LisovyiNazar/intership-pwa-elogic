@@ -1,0 +1,19 @@
+{
+    "name": "@elogic/account-menu",
+    "version": "0.0.1",
+    "description": "Module for account menu on Order History Page",
+    "main": "index.js",
+    "scripts": {
+        "check": "yarn check:eslint && yarn check:prettier",
+        "check:eslint": "eslint",
+        "check:prettier": "prettier --check '*.{js,jsx,css}'"
+    },
+    "author": "",
+    "license": "UNLICENSED",
+    "sideEffects": false,
+    "pwa-studio": {
+        "targets": {
+            "intercept": "src/targets/intercept.js"
+        }
+    }
+}
