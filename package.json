@@ -38,6 +38,7 @@
     "@elogic/cashondelivery": "*",
     "@elogic/notifications":  "*",
     "@elogic/account-menu":  "*",
+    "@elogic/recently-viewed":  "*",
     "@larsroettig/component-targetables": "^3.0.0",
     "@magento/pwa-buildpack": "~11.4.0",
     "react-hot-toast": "^2.4.0",
