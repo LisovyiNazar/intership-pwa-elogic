@@ -19,6 +19,7 @@ const EditPurchaseOrder = props => {
     } = props;
 
     const classes = useStyle(defaultClasses, props.classes);
+    const purchaseOrderNumberInit = localStorage.getItem('purchase_order_number');
 
     return (
         <div className={classes.root}>
@@ -28,6 +29,7 @@ const EditPurchaseOrder = props => {
                 onPaymentError={onPaymentError}
                 resetShouldSubmit={resetShouldSubmit}
                 shouldSubmit={shouldSubmit}
+                purchaseOrderNumberInit={purchaseOrderNumberInit}
             />
         </div>
     );

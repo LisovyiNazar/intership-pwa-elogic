@@ -9,6 +9,8 @@ import { usePurchaseOrder } from '../../talons/usePurchaseOrder';
 import defaultClasses from './purchaseorder.module.css';
 import { FormattedMessage } from 'react-intl';
 import { useFieldState } from 'informed';
+import { isRequired } from '@magento/venia-ui/lib/util/formValidators';
+
 
 /**
  * The CheckMo component renders all information to handle checkmo payment.
@@ -40,6 +42,7 @@ const PurchaseOrder = props => {
     const {
         payableTo,
         mailingAddress,
+        purchaseOrderNumberInit,
         onBillingAddressChangedError,
         onBillingAddressChangedSuccess
     } = usePurchaseOrder({ ...props, purchaseOrderNumber });
@@ -88,6 +91,8 @@ const PurchaseOrder = props => {
                 <TextInput
                     id="purchaseOrderNumber"
                     field="purchaseOrderNumber"
+                    validate={isRequired}
+                    initialValue={purchaseOrderNumberInit}
                 />
             </Field>
         </div>
