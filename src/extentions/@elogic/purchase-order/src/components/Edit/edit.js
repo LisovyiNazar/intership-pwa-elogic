@@ -5,6 +5,7 @@ import { useStyle } from '@magento/venia-ui/lib/classify';
 
 import PurchaseOrder from '../PurchaseOrder';
 import defaultClasses from './edit.module.css';
+import { useEdit } from '../../talons/useEdit'
 
 /**
  * The edit view for the Checkmo payment method.
@@ -18,8 +19,10 @@ const EditPurchaseOrder = props => {
         shouldSubmit
     } = props;
 
+    const talonProps = useEdit();
+    const { purchaseOrderNumberInit } = talonProps;
+
     const classes = useStyle(defaultClasses, props.classes);
-    const purchaseOrderNumberInit = localStorage.getItem('purchase_order_number');
 
     return (
         <div className={classes.root}>

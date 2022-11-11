@@ -38,7 +38,6 @@ export const usePurchaseOrder = props => {
         onPaymentSuccess, 
         onPaymentError, 
         purchaseOrderNumber,
-        purchaseOrderNumberInit
     } = props;
 
     const [
@@ -64,7 +63,7 @@ export const usePurchaseOrder = props => {
         updatePaymentMethod({
             variables: { cartId, purchaseOrderNumber }
         });
-        localStorage.setItem('purchase_order_number', purchaseOrderNumber);
+        console.log('success');
     }, [updatePaymentMethod, cartId, purchaseOrderNumber]);
 
     useEffect(() => {
@@ -96,7 +95,6 @@ export const usePurchaseOrder = props => {
             data &&
             data.storeConfig &&
             data.storeConfig.payment_checkmo_mailing_address,
-        purchaseOrderNumberInit,
         onBillingAddressChangedError,
         onBillingAddressChangedSuccess
     };

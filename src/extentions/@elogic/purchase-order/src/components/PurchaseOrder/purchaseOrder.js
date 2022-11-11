@@ -24,6 +24,7 @@ import { isRequired } from '@magento/venia-ui/lib/util/formValidators';
  * @param {Function} props.resetShouldSubmit callback to reset the shouldSubmit flag
  */
 const PurchaseOrder = props => {
+    const { purchaseOrderNumberInit } = props;
     const classes = useStyle(defaultClasses, props.classes);
 
     const addressTemplate = str => (
@@ -42,7 +43,6 @@ const PurchaseOrder = props => {
     const {
         payableTo,
         mailingAddress,
-        purchaseOrderNumberInit,
         onBillingAddressChangedError,
         onBillingAddressChangedSuccess
     } = usePurchaseOrder({ ...props, purchaseOrderNumber });
