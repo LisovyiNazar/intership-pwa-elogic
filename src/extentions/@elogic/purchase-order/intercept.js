@@ -1,3 +1,5 @@
+const { Targetables } = require('@magento/pwa-buildpack');
+
 module.exports = targets => {
     const { specialFeatures } = targets.of('@magento/pwa-buildpack');
     specialFeatures.tap(flags => {
@@ -38,4 +40,12 @@ module.exports = targets => {
                 '@elogic/purchase-order/src/components/Summary'
         })
     );
+
+    const targetables = Targetables.using(targets);
+
+    const targetsIntercept = require('./src/targets/targets.targetables');
+    targetsIntercept(targetables);
+
+    const talonsIntercept = require('./src/talons/talons.targetables');
+    talonsIntercept(targetables);
 };

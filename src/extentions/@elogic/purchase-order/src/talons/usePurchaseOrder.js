@@ -63,7 +63,6 @@ export const usePurchaseOrder = props => {
         updatePaymentMethod({
             variables: { cartId, purchaseOrderNumber }
         });
-        console.log('success');
     }, [updatePaymentMethod, cartId, purchaseOrderNumber]);
 
     useEffect(() => {

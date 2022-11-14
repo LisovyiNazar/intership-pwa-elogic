@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { useStyle } from '@magento/venia-ui/lib/classify';
 import { shape, string, bool, func } from 'prop-types';
 import BillingAddress from '@magento/venia-ui/lib/components/CheckoutPage/BillingAddress';
@@ -24,7 +24,7 @@ import { isRequired } from '@magento/venia-ui/lib/util/formValidators';
  * @param {Function} props.resetShouldSubmit callback to reset the shouldSubmit flag
  */
 const PurchaseOrder = props => {
-    const { purchaseOrderNumberInit } = props;
+    const { purchaseOrderNumber, setPurchaseOrderNumber } = props;
     const classes = useStyle(defaultClasses, props.classes);
 
     const addressTemplate = str => (
@@ -34,11 +34,10 @@ const PurchaseOrder = props => {
     );
 
     const { value } = useFieldState('purchaseOrderNumber');
-    const [purchaseOrderNumber, setPurchaseOrderNumber] = useState(value);
 
     useEffect(() => {
         setPurchaseOrderNumber(value);
-    }, [value, purchaseOrderNumber, props])
+    }, [props, value, setPurchaseOrderNumber])
 
     const {
         payableTo,
@@ -92,7 +91,7 @@ const PurchaseOrder = props => {
                     id="purchaseOrderNumber"
                     field="purchaseOrderNumber"
                     validate={isRequired}
-                    initialValue={purchaseOrderNumberInit}
+                    initialValue={purchaseOrderNumber}
                 />
             </Field>
         </div>
