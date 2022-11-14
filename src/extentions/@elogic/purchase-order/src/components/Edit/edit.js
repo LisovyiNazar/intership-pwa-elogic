@@ -10,7 +10,6 @@ import defaultClasses from './edit.module.css';
  * The edit view for the Checkmo payment method.
  */
 const EditPurchaseOrder = props => {
-    console.log(props);
     const {
         onPaymentReady,
         onPaymentSuccess,
