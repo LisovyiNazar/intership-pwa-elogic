@@ -1,0 +1,117 @@
+import React, { useEffect } from 'react';
+import { useStyle } from '@magento/venia-ui/lib/classify';
+import { shape, string, bool, func } from 'prop-types';
+import BillingAddress from '@magento/venia-ui/lib/components/CheckoutPage/BillingAddress';
+import Field from '@magento/venia-ui/lib/components/Field';
+import TextInput from '@magento/venia-ui/lib/components/TextInput';
+
+import { usePurchaseOrder } from '../../talons/usePurchaseOrder';
+import defaultClasses from './purchaseorder.module.css';
+import { FormattedMessage } from 'react-intl';
+import { useFieldState } from 'informed';
+import { isRequired } from '@magento/venia-ui/lib/util/formValidators';
+
+
+/**
+ * The CheckMo component renders all information to handle checkmo payment.
+ *
+ * @param {String} props.payableTo shop owner name where you need to send.
+ * @param {String} props.mailingAddress shop owner post address where you need to send.
+ * @param {Boolean} props.shouldSubmit boolean value which represents if a payment nonce request has been submitted
+ * @param {Function} props.onPaymentSuccess callback to invoke when the a payment nonce has been generated
+ * @param {Function} props.onPaymentReady callback to invoke when the component is ready
+ * @param {Function} props.onPaymentError callback to invoke when component throws an error
+ * @param {Function} props.resetShouldSubmit callback to reset the shouldSubmit flag
+ */
+const PurchaseOrder = props => {
+    const { purchaseOrderNumber, setPurchaseOrderNumber } = props;
+    const classes = useStyle(defaultClasses, props.classes);
+
+    const addressTemplate = str => (
+        <span key={str} className={classes.addressLine}>
+            {str} <br />
+        </span>
+    );
+
+    const { value } = useFieldState('purchaseOrderNumber');
+
+    useEffect(() => {
+        setPurchaseOrderNumber(value);
+    }, [props, value, setPurchaseOrderNumber])
+
+    const {
+        payableTo,
+        mailingAddress,
+        onBillingAddressChangedError,
+        onBillingAddressChangedSuccess
+    } = usePurchaseOrder({ ...props, purchaseOrderNumber });
+
+    const formatAddress = mailingAddress
+        ? mailingAddress.split('\n').map(str => addressTemplate(str))
+        : props.mailingAddress.split('\n').map(str => addressTemplate(str));
+
+    return (
+        <div className={classes.root}>
+            <p className={classes.title}>
+                <FormattedMessage
+                    id={'checkMo.payableToTitle'}
+                    defaultMessage={'Make Check payable to:'}
+                />
+            </p>
+            <p className={classes.formatAddress}>
+                {payableTo ? payableTo : props.payableTo}
+            </p>
+            <p className={classes.mailingAddressTitle}>
+                <FormattedMessage
+                    id={'checkMo.mailingAddressTitle'}
+                    defaultMessage={'Send Check to:'}
+                />
+            </p>
+            <p className={classes.formatAddress}>{formatAddress}</p>
+            <p className={classes.note}>
+                <FormattedMessage
+                    id={'checkMo.note'}
+                    defaultMessage={
+                        'Note: Your order will be shipped once the Purchase Order has been received and processed.'
+                    }
+                />
+            </p>
+            <BillingAddress
+                resetShouldSubmit={props.resetShouldSubmit}
+                shouldSubmit={props.shouldSubmit}
+                onBillingAddressChangedError={onBillingAddressChangedError}
+                onBillingAddressChangedSuccess={onBillingAddressChangedSuccess}
+            />
+            <Field
+                id="purchaseOrderNumber"
+                classes={classes.field}
+                label='Purchase Order Number'
+            >
+                <TextInput
+                    id="purchaseOrderNumber"
+                    field="purchaseOrderNumber"
+                    validate={isRequired}
+                    initialValue={purchaseOrderNumber}
+                />
+            </Field>
+        </div>
+    );
+};
+
+PurchaseOrder.propTypes = {
+    classes: shape({ root: string }),
+    payableTo: string,
+    mailingAddress: string,
+    shouldSubmit: bool.isRequired,
+    onPaymentSuccess: func,
+    onPaymentReady: func,
+    onPaymentError: func,
+    resetShouldSubmit: func.isRequired
+};
+
+PurchaseOrder.defaultProps = {
+    payableTo: 'Venia Inc',
+    mailingAddress: 'Venia Inc\r\nc/o Payment\r\nPO 122334\r\nAustin Texas'
+};
+
+export default PurchaseOrder;

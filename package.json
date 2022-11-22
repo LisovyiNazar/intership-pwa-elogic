@@ -34,10 +34,12 @@
     "@magento/venia-drivers": "src/drivers"
   },
   "dependencies": {
+    "@elogic/payment-methods":  "*",
     "@elogic/banktransfer":   "*",
     "@elogic/cashondelivery": "*",
     "@elogic/notifications":  "*",
     "@elogic/account-menu":  "*",
+    "@elogic/purchase-order":  "*",
     "@larsroettig/component-targetables": "^3.0.0",
     "@magento/pwa-buildpack": "~11.4.0",
     "react-hot-toast": "^2.4.0",
