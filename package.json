@@ -34,6 +34,7 @@
     "@magento/venia-drivers": "src/drivers"
   },
   "dependencies": {
+    "@elogic/payment-methods":  "*",
     "@elogic/banktransfer":   "*",
     "@elogic/cashondelivery": "*",
     "@elogic/notifications":  "*",

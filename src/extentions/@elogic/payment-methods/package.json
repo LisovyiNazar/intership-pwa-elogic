@@ -1,0 +1,19 @@
+{
+    "name": "@elogic/payment-methods",
+    "version": "0.0.1",
+    "description": "Module for all payment methods",
+    "main": "index.js",
+    "scripts": {
+        "check": "yarn check:eslint && yarn check:prettier",
+        "check:eslint": "eslint",
+        "check:prettier": "prettier --check '*.{js,jsx,css}'"
+    },
+    "author": "",
+    "license": "UNLICENSED",
+    "sideEffects": false,
+    "pwa-studio": {
+        "targets": {
+            "intercept": "./intercept"
+        }
+    }
+}
